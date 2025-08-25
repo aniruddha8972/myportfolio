@@ -1,453 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aniruddha Giri - Terminal Portfolio</title>
+  <style>
+    body {
+      margin: 0; padding: 20px;
+      font-family: 'Courier New', Courier, monospace;
+      background: #000;
+      color: #0f0;
+      display: flex; flex-direction: column; height: 100vh;
+      overflow: hidden;
+    }
+    body.light-theme {
+      background: #fff;
+      color: #008000;
+    }
+    #terminal {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      border: 1px solid currentColor;
+      padding: 10px;
+      background: inherit;
+      color: inherit;
+    }
+    .header {
+      border: 2px solid currentColor;
+      padding: 10px;
+      margin-bottom: 15px;
+      width: fit-content;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    .header .line {
+      text-align: center;
+    }
+    .line-input {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .prompt {
+      margin-right: 5px;
+      word-break: break-word;
+    }
+    .cmd-input {
+      background: transparent;
+      border: none;
+      color: inherit;
+      width: 100%;
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+    }
+    a {
+      color: #66ff66;
+      word-break: break-all;
+    }
+    .error {
+      color: #f44;
+    }
+    .bold {
+      font-weight: bold;
+    }
+    #controls {
+      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    #copy-btn, #theme-btn {
+      background: none;
+      border: 1px solid currentColor;
+      color: inherit;
+      font-family: inherit;
+      padding: 5px 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+    #copy-btn:hover, #theme-btn:hover {
+      background-color: rgba(0,255,0,0.2);
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      .cmd-input {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
-<body class="main-content">
-    <header class="container header active" id="home">
-        <div class="header-content">
-            <div class="left-header">
-                <div class="h-shape"></div>
-                <div class="image">
-                    <img src="img\wallpaperflare.com_wallpaper (5).jpg" alt="">
-                </div>
-            </div>
-            <div class="right-header">
-                <h1 class="name">
-                    Hi, I'm <span>Aniruddha </span>
-                    An engineering student.
-                </h1>
-                <p>
-                    I love to learn beautiful and functional technologies.
-                 An honors student with a record of academic and extracurricular success.Extensive leadership experience, particularly
-within a higher education setting.Adept at working across departments, with faculty, administrators, and students   
-                </p>
-                <div class="btn-con">
-                    <a href ="pdf/resume.pdf" class="main-btn" target="_blank">
-                        <span class="btn-text">Download CV</span>
-                        <span class="btn-icon"><i class="fas fa-download"></i></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="container about" id="about">
-            <div class="main-title">
-                <h2>About <span>me</span><span class="bg-text">my stats</span></h2>
-            </div>
-            <div class="about-container">
-                <div class="left-about">
-                    <h4>Information About me</h4>
-                    <p>
-                        <li><b>Education</b>
-                            <ul>
-                               <li>
-                                <b>B.Tech</b>
-                                <p>
-                                    B.P Poddar Institute of Management and Technology • kolkata, West Bengal
-                                    (07/2024)
-                                    Information Technology (IT) GPA - 8.6 (till 6th sem)
-                               </p>
-                               </li>
-                               <li>
-                                <b>12th</b>
-                                <p>
-                                    Garh Haripur G.N High school • GARH HARIPUR, West Bengal
-                                    Physics, Chemistry, Mathematics, biology (04/2017 - 04/2019), WBCHSE board (77.2%)
-                                </p>
-                               </li>
-                               <li>
-                                <b>10th</b>
-                                <p>
-                                Garh Haripur G.N High school • GARH HARIPUR, West Bengal
-                                03/2017
-                                WBBSE board (78.42%)</p>
-                                </li>
-                            </ul>
-                        </li>
-                    </p>
-                    <div class="btn-con">
-                        <a href="pdf/resume.pdf" class="main-btn" target="_blank">
-                            <span class="btn-text">Download CV</span>
-                            <span class="btn-icon"><i class="fas fa-download"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="right-about">
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">2+</p>
-                            <p class="small-text">Years of <br /> python,JAVA,C/C++ experience</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">1+</p>
-                            <p class="small-text">Years<br /> Django experience</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">1+</p>
-                            <p class="small-text">Years of<br /> mysql,DBMS,networks experience</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">3+</p>
-                            <p class="small-text">Years of <br /> Microsoft Office tools experience</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-stats">
-                <h4 class="stat-title">My Skills</h4>
-                <div class="progress-bars">
-                    <div class="progress-bar">
-                        <p class="prog-title">html5</p>
-                        <div class="progress-con">
-                            <p class="prog-text">60%</p>
-                            <div class="progress">
-                                <span class="html"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">css3</p>
-                        <div class="progress-con">
-                            <p class="prog-text">60%</p>
-                            <div class="progress">
-                                <span class="css"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">C/C++</p>
-                        <div class="progress-con">
-                            <p class="prog-text">85%</p>
-                            <div class="progress">
-                                <span class="js"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Django</p>
-                        <div class="progress-con">
-                            <p class="prog-text">75%</p>
-                            <div class="progress">
-                                <span class="react"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">JAVA</p>
-                        <div class="progress-con">
-                            <p class="prog-text">87%</p>
-                            <div class="progress">
-                                <span class="node"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Python</p>
-                        <div class="progress-con">
-                            <p class="prog-text">85%</p>
-                            <div class="progress">
-                                <span class="python"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h4 class="stat-title">My Timeline</h4>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2016 - 2017</p>
-                    <h5>1o th<span> - state board</span></h5>
-                    <p>
-                        Garh Haripur G.N High school • GARH HARIPUR, West Bengal
-                        03/2017
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2017 - 2019</p>
-                    <h5>12 th<span> - state board</span></h5>
-                    <p>
-                        Garh Haripur G.N High school • GARH HARIPUR, West Bengal
-                        03/2019
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2019 - 2020</p>
-                    <h5>study drop<span> - preparation</span></h5>
-                    <p>
-                        prepar for the engineering entrence exam JEE MAIN & WBJEE
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2020 - present</p>
-                    <h5>B.Tech degree <span> - Information Technology</span></h5>
-                    <p>
-                        B.P Poddar Institute of Management and Technology • kolkata, West Bengal
-                                    (07/2024)
-                                    GPA - 8.6 (till 6th sem)
-                    </p>
-                </div>
-                 <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">11/2023 - present</p>
-                    <h5>Machine learning intern <span> - RnPsoft private limited</span></h5>
-                </div>
-            </div>
-        </section>
-        <section class="container" id="portfolio">
-            <div class="main-title">
-                <h2>My <span>Portfolio</span><span class="bg-text">My Work</span></h2>
-            </div>
-            <p class="port-text">
-                Here is some of my work that I've done in various programming languages.
-            </p>
-            <div class="portfolios">
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/port1.jpg" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Voice assistant using python libraries</h3>
-                        <div class="icons">
-                            <a  href="https://github.com/aniruddha8972/voice-assistant" target="_blank" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/port2.jpg" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>sharing files using QR code</h3>
-                        <div class="icons">
-                            <a href="https://github.com/aniruddha8972/file-sharing-QR-generator" target="_blank" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/port3.jpg" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>user authentication system</h3>
-                        <div class="icons">
-                            <a href="https://github.com/aniruddha8972/user-authentication-system" target="_blank" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/port4.jpg" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>online examination system</h3>
-                        <div class="icons">
-                            <a href="https://github.com/aniruddha8972/online-examination-system" target="_blank"class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/port5.jpg" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Sybil Attack detection and prevention:</h3>
-                        <p>(ongoing research paper) (09/2023 - Present) ongoing  project(cyber
-                            security domain)</p>
-                     
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container" id="blogs">
-            <div class="blogs-content">
-                <div class="main-title">
-                    <h2>My <span>Certifications</span><span class="bg-text">My Activities</span></h2>
-                </div>
-                <div class="blogs">
-                    <div class="blog">
-                        <img src="img/pyhton.jpg" alt="">
-                        <div class="blog-text">
-                            <a href="https://www.udemy.com/certificate/UC-299260a7-7378-4a39-876c-40f01f4689a8/" target="_blank">
-                               <b> Automate the Boring Stuff with Python Programming </b>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/java.jpg" alt="">
-                        <div class="blog-text">
-                            <a href="https://www.udemy.com/certificate/UC-8eb16fd0-59d1-4329-8dad-22d285e6123d/" target="_blank">
-                               <b> Project Development Using JAVA </b></a>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/excel.jpg" alt="">
-                        <div class="blog-text">
-                            <a href="https://www.udemy.com/certificate/UC-a5039245-c5c9-4e80-8073-471be5c94b0a/" target="_blank"><b>Microsoft Excel For Beginners</b>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/django.jpg" alt="">
-                        <div class="blog-text">
-                            <a href="https://www.udemy.com/certificate/UC-48f7dbeb-63aa-49c3-9236-e0d23767a146/" target="_blank"><b>Python And Django Framework</b>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/pandas.jpg" alt="">
-                        <div class="blog-text">
-                            <a href="https://www.udemy.com/certificate/UC-dcee83f3-0ae5-4615-a83a-ead3cf9220bb/" target="_blank"> <b>Python Pandas Data Crash Course</b>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/finance.jpg" alt="">
-                        <div class="blog-text">
-                            <a href="https://www.udemy.com/certificate/UC-3d82ced5-af95-4bc0-89f1-e9586f47e770/" target="_blank"><b>Corporate Finance -Introduction & Financial Statements</b>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container contact" id="contact">
-            <div class="contact-container">
-                <div class="main-title">
-                    <h2>Contact <span>Me</span><span class="bg-text">Contact</span></h2>
-                </div>
-                <div class="contact-content-con">
-                    <div class="left-contact">
-                        <h4>Contact me here</h4>
-                        <p>
-                           for more information you can contact with me with this links
-                        </p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Location</span>
-                                </div>
-                                <p>
-                                    : Haldiram,Kaikhali,Kolkata,700052
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Email :</span>
-                                </div>
-                                <p>
-                                    <a href ="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRttgJNGBzvTNpHWxXSCkJTCqnCDzFMVdQRJwsLZgQdlWxzRnxTrVqGQKBcwFRJsqKlsQwl" terget ="_blank">girianiruddha4@gmail.com</a>
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Institute Email :</span>
-                                </div>
-                                <p>
-                                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTNHnzBTNjZclbpJCpxxJvvdnSnMjNwHzvcZRjbvgtDvqrJmzlqzczCXsfCNlvVnGGGwkg" target="_blank">aniruddha.it220027@bppimt.ac.in</a>
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="far fa-address-book"></i>
-                                    <span>Mobile Number :</span>
-                                </div>
-                                <p>
-                                    <span>+918972825240</span>
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fab fa-audible"></i>
-                                    <span>Languages :</span>
-                                </div>
-                                <p>
-                                    <span>Bengali, English, Hindi</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="contact-icons">
-                            <div class="contact-icon">
-                                <a href="https://www.facebook.com/aniruddha.giri.334/" target="_blank">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="https://www.instagram.com/aniru_ddha8972/" target="_blank">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://github.com/aniruddha8972" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/aniruddha-giri-479b52205/" target="_blank">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+<body>
+  <div class="header">
+    <div class="line">╔════════════════════════════════════════════════════════════╗</div>
+    <div class="line" style="font-weight:bold; font-size:1.2rem;">║        ANIRUDDHA GIRI - TERMINAL PORTFOLIO                 ║</div>
+    <div class="line">║   Data Engineer | Cloud Developer | Problem Solver         ║</div>
+    <div class="line">╚════════════════════════════════════════════════════════════╝</div>
+  </div>
 
-    <div class="controls">
-        <div class="control active-btn" data-id="home" >
-            <i class="fas fa-home"></i>
-        </div>
-        <div class="control" data-id="about">
-            <i class="fas fa-user"></i>
-        </div>
-        <div class="control" data-id="portfolio">
-            <i class="fas fa-briefcase"></i>
-        </div>
-        <div class="control" data-id="blogs">
-            <i class="far fa-address-card"></i>
-        </div>
-        <div class="control" data-id="contact">
-            <i class="fas fa-envelope-open"></i>
-        </div>
-    </div>
-    <div class="theme-btn">
-        <i class="fas fa-adjust"></i>
-    </div>
-    <script src="app.js"></script>
+  <div id="controls">
+    <button id="copy-btn">Copy Output</button>
+    <button id="theme-btn">Switch Theme</button>
+  </div>
+
+  <div id="terminal"></div>
+
+  <script>
+    const terminal = document.getElementById('terminal');
+    const copyBtn = document.getElementById('copy-btn');
+    const themeBtn = document.getElementById('theme-btn');
+    const promptBase = 'C:\\Users\\Aniruddha_Giri';
+    let currentDir = '';
+    const fullPrompt = () => `${promptBase}${currentDir}>`;
+    let history = [], historyIndex = 0;
+
+    const fileSystem = {
+      '/': ['resume.txt', 'skills', 'certifications', 'projects', 'experience', 'contact'],
+      '/skills': ['programming.txt', 'frameworks.txt', 'cloud.txt'],
+      '/certifications': ['microsoft.txt', 'udemy.txt', 'achievements.txt'],
+      '/projects': ['apnakaam.txt', 'lipsyn.txt', 'sybil.txt', 'voice-assistant.txt', 'online-exam.txt'],
+      '/experience': ['tcs.txt'],
+      '/contact': ['info.txt']
+    };
+
+    const files = {
+      '/resume.txt': `Name: Aniruddha Giri
+Email: girianiruddha4@gmail.com
+Phone: 08972825240
+Portfolio: https://aniruddha8972.github.io/myportfolio/
+Role: Data Engineer | Cloud Developer | ML Intern
+Institute: B.P. Poddar Institute of Management and Technology
+GPA: 8.55
+Graduation Year: 2024`,
+      '/skills/programming.txt': `Java, Python, C, SQL, HTML, CSS`,
+      '/skills/frameworks.txt': `Pandas, NumPy, Scikit-learn, TensorFlow, PySpark, Django, Flask`,
+      '/skills/cloud.txt': `Azure, Data Factory, Data Bricks`,
+      '/certifications/microsoft.txt': `✓ Azure Data Engineer Associate
+✓ Azure Data Scientist Associate
+✓ Azure AI Engineer Associate`,
+      '/certifications/udemy.txt': `✓ Python and Django Framework
+✓ Java for Beginners
+✓ Automate the Boring Stuff with Python
+✓ Excel Course for Beginners`,
+      '/certifications/achievements.txt': `✓ Intern of the Month @ RnPsoft (Nov & Dec 2023)
+✓ Cleared GATE 2023 & 2024 (400+ Score)`,
+      '/projects/apnakaam.txt': `Apnakaam (Job posting for daily workers)
+Tech: Flask, MySQL, HTML/CSS
+GitHub: https://github.com/aniruddha8972/apnakaam`,
+      '/projects/lipsyn.txt': `Lip-sync Any Video to Audio
+Tech: NumPy, PyTorch, Librosa, GTTS
+GitHub: https://github.com/aniruddha8972/lipsyn-ml`,
+      '/projects/sybil.txt': `Sybil Attack Detection System
+Tech: ML, Network Traffic Analysis
+GitHub: https://github.com/aniruddha8972/sybil-attack-detection-system`,
+      '/projects/voice-assistant.txt': `Voice Assistant (Daily News Reader)
+Tech: Google/Wiki APIs, pyttsx3, SSAPI-5
+GitHub: https://github.com/aniruddha8972/voice-assistant`,
+      '/projects/online-exam.txt': `Online Examination System
+Tech: Django, Bootstrap, HTML/CSS
+GitHub: https://github.com/aniruddha8972/online-examination-system`,
+      '/experience/tcs.txt': `Role: Assistant System Engineer
+Organization: Tata Consultancy Services (TCS)
+Experience: 1 Year`,
+      '/contact/info.txt': `Email: girianiruddha4@gmail.com
+GitHub: https://github.com/aniruddha8972
+LinkedIn: https://linkedin.com/in/aniruddha-giri
+Portfolio: https://aniruddha8972.github.io/myportfolio/`
+    };
+
+    function appendLine(text, className = '') {
+      const line = document.createElement('div');
+      if (className) line.className = className;
+      line.innerHTML = text;
+      terminal.appendChild(line);
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+
+    function appendAnimated(text, className, cb) {
+      const line = document.createElement('div');
+      if (className) line.className = className;
+      terminal.appendChild(line);
+      let i = 0;
+      const interval = setInterval(() => {
+        line.innerHTML = text.slice(0, ++i).replace(/\n/g, '<br>');
+        terminal.scrollTop = terminal.scrollHeight;
+        if (i >= text.length) {
+          clearInterval(interval);
+          if (cb) cb();
+        }
+      }, 8);
+    }
+
+    function createInput() {
+      const line = document.createElement('div');
+      line.className = 'line-input';
+      const prompt = document.createElement('span');
+      prompt.className = 'prompt';
+      prompt.textContent = fullPrompt();
+      const input = document.createElement('input');
+      input.className = 'cmd-input';
+      input.type = 'text';
+      input.autofocus = true;
+      input.spellcheck = false;
+
+      line.appendChild(prompt);
+      line.appendChild(input);
+      terminal.appendChild(line);
+      input.focus();
+      terminal.scrollTop = terminal.scrollHeight;
+
+      input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+          const val = input.value.trim();
+          if (!val) return;
+          input.disabled = true;
+          input.style.background = 'transparent';
+          input.style.color = 'inherit';
+          input.style.border = 'none';
+          input.style.outline = 'none';
+          input.style.caretColor = 'transparent';
+
+          handleCommand(val);
+          history.push(val);
+          historyIndex = history.length;
+        } else if (e.key === 'ArrowUp') {
+          if (historyIndex > 0) {
+            historyIndex--;
+            input.value = history[historyIndex];
+          }
+        } else if (e.key === 'ArrowDown') {
+          if (historyIndex < history.length - 1) {
+            historyIndex++;
+            input.value = history[historyIndex];
+          } else {
+            input.value = '';
+          }
+        }
+      });
+    }
+
+    function handleCommand(cmdRaw) {
+      const args = cmdRaw.trim().split(' ');
+      const base = args[0].toLowerCase();
+      const arg = args.slice(1).join(' ');
+
+      if (base === 'exit') return appendLine("Session ended.");
+      if (base === 'clear') return terminal.innerHTML = '', createInput();
+      if (base === 'theme') return document.body.classList.toggle('light-theme'), createInput();
+      if (base === 'pwd') return appendLine(currentDir || '/'), createInput();
+
+      if (base === 'ls') {
+        const path = currentDir || '/';
+        appendLine(fileSystem[path]?.join('&nbsp;&nbsp;&nbsp;') || 'Directory empty.');
+        return createInput();
+      }
+
+      if (base === 'cd') {
+        let target = arg;
+        if (!target) currentDir = '';
+        else if (target === '..') currentDir = currentDir.split('/').slice(0, -1).join('/') || '';
+        else {
+          const fullPath = (currentDir + '/' + target).replace(/\/+/g, '/');
+          if (fileSystem[fullPath]) currentDir = fullPath;
+          else appendLine(`<span class="error">No such directory: ${target}</span>`);
+        }
+        return createInput();
+      }
+
+      if (base === 'cat') {
+        const fullPath = (currentDir + '/' + arg).replace(/\/+/g, '/');
+        if (files[fullPath]) appendAnimated(files[fullPath], '', createInput);
+        else appendLine(`<span class="error">File not found: ${arg}</span>`), createInput();
+        return;
+      }
+
+      if (base === 'whoami') return appendAnimated(`Aniruddha Giri – Cloud Developer | Data Engineer | ML Intern`, '', createInput);
+      if (base === 'help') return appendAnimated(`Supported commands: cd, ls, pwd, cat, clear, theme, whoami, help, exit`, '', createInput);
+
+      appendLine(`<span class="error">'${cmdRaw}' is not recognized.</span>`);
+      createInput();
+    }
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(terminal.innerText).then(() => {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => copyBtn.textContent = 'Copy Output', 1500);
+      });
+    });
+
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+    });
+
+    setTimeout(() => {
+      appendAnimated("Booting terminal portfolio...", '', () => {
+        appendLine("Type 'help' to see available commands.");
+        createInput();
+      });
+    }, 300);
+  </script>
 </body>
 </html>
